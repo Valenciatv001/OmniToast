@@ -115,15 +115,15 @@ export default function RootLayout() {
 ```
 
 ### 2. Triggering Notifications & Modals
-Just like Web, you have access to the exact same manager methods!
+Because `modal` and `toast` share the exact same headless core engine, they are both accessible directly from the global state. You have two ways to trigger them:
 
+**Method A: Destructure from the Hook (Inside React)**
 ```tsx
 import { View, Button } from 'react-native';
-import { useToast, useModal } from '@omnitoast/core';
+import { useToast } from '@omnitoast/core'; // Pull both from useToast!
 
 export default function MobileScreen() {
-  const toast = useToast();
-  const modal = useModal();
+  const { toast, modal } = useToast();
 
   const handleDelete = () => {
     modal.danger({
@@ -131,18 +131,26 @@ export default function MobileScreen() {
       message: 'This operation cannot be undone. Are you sure?',
       confirmLabel: 'Delete Forever',
       cancelLabel: 'Keep Account',
-      onConfirm: () => {
-        toast.info('Account deleted mapped securely.');
-      }
+      onConfirm: () => toast.info('Account fully wiped.')
     });
   };
 
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Button title="Show Network Error" onPress={() => toast.error('Server Unreachable')} />
-      <Button title="Delete Account" onPress={handleDelete} color="red" />
-    </View>
-  );
+  return <Button title="Delete Account" onPress={handleDelete} color="red" />;
+}
+```
+
+**Method B: Direct Global Import (Outside React)**
+Because OmniToast uses an independent state machine, you can launch native modals completely outside of the React lifecycle (e.g. from an API helper without needing hooks).
+
+```tsx
+import { toast, modal } from '@omnitoast/core'; // Imperative globals!
+
+export function handleSystemFailure() {
+    modal.danger({
+      title: 'Critical Failure',
+      message: 'The network connection was lost globally.',
+      onConfirm: () => toast.success('Reconnecting...')
+    });
 }
 ```
 
