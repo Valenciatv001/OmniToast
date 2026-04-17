@@ -56,14 +56,14 @@ export function App() {
         message: 'This action cannot be undone. All data associated with this item will be removed.',
         confirmLabel: 'Delete',
         cancelLabel: 'Cancel',
-        onConfirm: () => toast.error('Item deleted.', { duration: 3000 }),
+        onConfirm: () => { toast.error('Item deleted.', { duration: 3000 }); },
       },
       info: {
         title: 'Update available',
         message: 'Version 2.0 is ready to install. Restart the app to apply the update.',
         confirmLabel: 'Restart now',
         cancelLabel: 'Later',
-        onConfirm: () => toast.info('Restarting…'),
+        onConfirm: () => { toast.info('Restarting…'); },
       },
     }[variant];
 
