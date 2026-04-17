@@ -1,6 +1,6 @@
 {
   "name": "@omnitoast/native",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Expo / React Native adapter for modal-toast — animated toasts and modal dialogs",
   "keywords": ["toast", "modal", "notification", "react-native", "expo"],
   "author": "",
