@@ -1,0 +1,40 @@
+{
+  "name": "@modal-toast/react",
+  "version": "0.1.0",
+  "description": "React (web) adapter for modal-toast — animated toasts and modal dialogs",
+  "keywords": ["toast", "modal", "notification", "react", "web"],
+  "author": "",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --external react",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --external react",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modal-toast/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
