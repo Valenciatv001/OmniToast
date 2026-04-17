@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { toast, modal, useToast } from '@omnitoast/react';
 import type { ToastPosition } from '@omnitoast/react';
 
