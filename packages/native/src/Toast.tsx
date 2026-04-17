@@ -7,8 +7,8 @@ import {
   View,
   Platform,
 } from 'react-native';
-import { dismissToast } from '@modal-toast/core';
-import type { ToastState, ToastPosition } from '@modal-toast/core';
+import { dismissToast } from '@omnitoast/core';
+import type { ToastState, ToastPosition } from '@omnitoast/core';
 import { VariantIcon, VARIANT_COLORS } from './icons';
 
 interface ToastProps {

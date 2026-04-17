@@ -6,7 +6,7 @@ import type { StoreState } from './types';
 /**
  * React hook to access the toast/modal state and imperative API.
  *
- * Works identically in @modal-toast/react and @modal-toast/native.
+ * Works identically in @omnitoast/react and @omnitoast/native.
  *
  * @example
  * const { toast, modal, toasts, activeModal } = useToast();

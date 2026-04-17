@@ -1,5 +1,5 @@
 {
-  "name": "@modal-toast/react",
+  "name": "@omnitoast/react",
   "version": "0.1.0",
   "description": "React (web) adapter for modal-toast — animated toasts and modal dialogs",
   "keywords": ["toast", "modal", "notification", "react", "web"],
@@ -23,7 +23,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@modal-toast/core": "workspace:*"
+    "@omnitoast/core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=17",

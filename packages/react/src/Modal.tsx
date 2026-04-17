@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { dismissModal } from '@modal-toast/core';
-import type { ModalState } from '@modal-toast/core';
+import { dismissModal } from '@omnitoast/core';
+import type { ModalState } from '@omnitoast/core';
 import { VariantIcon } from './icons';
 
 interface ModalProps {

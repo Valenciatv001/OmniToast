@@ -1,5 +1,5 @@
 /**
- * @modal-toast/core — internal pub/sub store
+ * @omnitoast/core — internal pub/sub store
  *
  * Intentionally framework-agnostic. No React, no external dependencies.
  * All UI adapters (React, React Native) subscribe to this store.

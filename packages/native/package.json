@@ -1,5 +1,5 @@
 {
-  "name": "@modal-toast/native",
+  "name": "@omnitoast/native",
   "version": "0.1.0",
   "description": "Expo / React Native adapter for modal-toast — animated toasts and modal dialogs",
   "keywords": ["toast", "modal", "notification", "react-native", "expo"],
@@ -17,13 +17,13 @@
   },
   "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean --external react --external react-native",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --external react --external react-native",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --external react --external react-native --external react-native-svg",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --external react --external react-native --external react-native-svg",
     "lint": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@modal-toast/core": "workspace:*"
+    "@omnitoast/core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=17",

@@ -1,4 +1,4 @@
-// Public API surface for @modal-toast/core
+// Public API surface for @omnitoast/core
 
 // ─── Imperative API ───────────────────────────────────────────────────────────
 export { toast, modal } from './ToastManager';

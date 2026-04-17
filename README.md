@@ -22,16 +22,16 @@ Because the business logic is abstracted, you install the **core** package along
 
 ### For React Web
 ```bash
-npm install @modal-toast/core @modal-toast/react
+npm install @omnitoast/core @omnitoast/react
 ```
 *Or using pnpm/yarn:*
 ```bash
-pnpm add @modal-toast/core @modal-toast/react
+pnpm add @omnitoast/core @omnitoast/react
 ```
 
 ### For Expo / React Native
 ```bash
-npm install @modal-toast/core @modal-toast/native react-native-svg react-native-safe-area-context
+npm install @omnitoast/core @omnitoast/native react-native-svg react-native-safe-area-context
 ```
 *(Ensure `react-native-safe-area-context` and `react-native-svg` are appropriately linked in your app or installed via `npx expo install`)*
 
@@ -44,8 +44,8 @@ Inject the `ToastProvider` at the root of your application to host the CSS and P
 
 ```tsx
 // App.tsx
-import { ToastProvider } from '@modal-toast/react';
-import '@modal-toast/react/index.css'; // Don't forget the styles!
+import { ToastProvider } from '@omnitoast/react';
+import '@omnitoast/react/index.css'; // Don't forget the styles!
 import MyComponent from './MyComponent';
 
 export default function App() {
@@ -62,7 +62,7 @@ You can either use the standard React Hook configuration, or just import the uni
 
 #### Option A: Inside a Component (Hooks)
 ```tsx
-import { useToast } from '@modal-toast/core';
+import { useToast } from '@omnitoast/core';
 
 export default function Dashboard() {
   const toast = useToast();
@@ -79,7 +79,7 @@ export default function Dashboard() {
 Perfect for API interceptors or global utilities!
 ```ts
 // api.ts
-import { toast } from '@modal-toast/core';
+import { toast } from '@omnitoast/core';
 
 api.interceptors.response.use(
   (res) => res,
@@ -100,7 +100,7 @@ Inject the `ToastProvider` outside of your routing layer. Remember to have your 
 ```tsx
 // app/_layout.tsx (Expo Router) OR App.tsx
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ToastProvider } from '@modal-toast/native';
+import { ToastProvider } from '@omnitoast/native';
 import { Stack } from 'expo-router';
 
 export default function RootLayout() {
@@ -119,7 +119,7 @@ Just like Web, you have access to the exact same manager methods!
 
 ```tsx
 import { View, Button } from 'react-native';
-import { useToast, useModal } from '@modal-toast/core';
+import { useToast, useModal } from '@omnitoast/core';
 
 export default function MobileScreen() {
   const toast = useToast();

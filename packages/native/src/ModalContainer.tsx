@@ -1,4 +1,4 @@
-import { useToast } from '@modal-toast/core';
+import { useToast } from '@omnitoast/core';
 import { Modal } from './Modal';
 
 /**

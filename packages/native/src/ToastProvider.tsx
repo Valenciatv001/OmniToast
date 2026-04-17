@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import type { ToastPosition } from '@modal-toast/core';
+import type { ToastPosition } from '@omnitoast/core';
 import { ToastContainer } from './ToastContainer';
 import { ModalContainer } from './ModalContainer';
 
@@ -34,7 +34,7 @@ export interface ToastProviderProps {
  *
  * @example
  * // App.tsx
- * import { ToastProvider } from '@modal-toast/native';
+ * import { ToastProvider } from '@omnitoast/native';
  *
  * export default function App() {
  *   return (

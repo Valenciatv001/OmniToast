@@ -5,7 +5,7 @@
     "outDir": "./dist",
     "noEmit": true,
     "paths": {
-      "@modal-toast/core": ["../core/src"]
+      "@omnitoast/core": ["../core/src"]
     }
   },
   "include": ["src"]

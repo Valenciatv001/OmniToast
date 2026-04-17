@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import { dismissToast } from '@modal-toast/core';
-import type { ToastState, ToastPosition } from '@modal-toast/core';
+import { dismissToast } from '@omnitoast/core';
+import type { ToastState, ToastPosition } from '@omnitoast/core';
 import { VariantIcon, CloseIcon } from './icons';
 
 interface ToastProps {

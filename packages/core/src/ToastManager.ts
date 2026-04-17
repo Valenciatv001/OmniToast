@@ -2,7 +2,7 @@
  * Imperative API — usable inside AND outside React components.
  *
  * Example (Axios interceptor):
- *   import { toast } from '@modal-toast/core';
+ *   import { toast } from '@omnitoast/core';
  *   toast.error('Session expired.');
  */
 

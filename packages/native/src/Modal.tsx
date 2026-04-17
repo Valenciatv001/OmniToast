@@ -10,8 +10,8 @@ import {
   View,
   Platform,
 } from 'react-native';
-import { dismissModal } from '@modal-toast/core';
-import type { ModalState } from '@modal-toast/core';
+import { dismissModal } from '@omnitoast/core';
+import type { ModalState } from '@omnitoast/core';
 import { VariantIcon, VARIANT_COLORS } from './icons';
 
 interface ModalProps {

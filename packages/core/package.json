@@ -1,5 +1,5 @@
 {
-  "name": "@modal-toast/core",
+  "name": "@omnitoast/core",
   "version": "0.1.0",
   "description": "Platform-agnostic core for modal-toast — state store, types, and hooks",
   "keywords": ["toast", "modal", "notification", "react", "react-native", "expo"],

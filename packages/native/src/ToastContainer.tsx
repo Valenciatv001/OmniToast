@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
-import { useToast } from '@modal-toast/core';
-import type { ToastPosition, ToastState } from '@modal-toast/core';
+import { useToast } from '@omnitoast/core';
+import type { ToastPosition, ToastState } from '@omnitoast/core';
 import { Toast } from './Toast';
 
 interface ToastContainerProps {

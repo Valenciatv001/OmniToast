@@ -1,4 +1,4 @@
-import type { ToastVariant } from '@modal-toast/core';
+import type { ToastVariant } from '@omnitoast/core';
 
 interface IconProps {
   className?: string;

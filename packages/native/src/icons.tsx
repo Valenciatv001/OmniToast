@@ -1,7 +1,7 @@
 // @ts-ignore
 import Svg, { Circle, Path } from 'react-native-svg';
 import { View } from 'react-native';
-import type { ToastVariant } from '@modal-toast/core';
+import type { ToastVariant } from '@omnitoast/core';
 
 interface IconProps {
   color: string;
