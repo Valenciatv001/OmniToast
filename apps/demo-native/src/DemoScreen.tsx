@@ -9,8 +9,8 @@ import {
   StatusBar,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { toast, modal, useToast } from '@modal-toast/native';
-import type { ToastPosition } from '@modal-toast/native';
+import { toast, modal, useToast } from '@omnitoast/native';
+import type { ToastPosition } from '@omnitoast/native';
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 
@@ -162,7 +162,7 @@ export function DemoScreen() {
         {/* ── Header ──────────────────────────────────────── */}
         <View style={[styles.header, { paddingTop: insets.top + 20 }]}>
           <View style={styles.badge}>
-            <Text style={styles.badgeText}>📦  @modal-toast/native</Text>
+            <Text style={styles.badgeText}>📦  @omnitoast/native</Text>
           </View>
           <Text style={styles.heroTitle}>
             Beautiful{' '}
@@ -293,7 +293,7 @@ export function DemoScreen() {
             <Text style={styles.codeKw}>{'import '}</Text>
             <Text style={styles.code}>{'{ ToastProvider } '}</Text>
             <Text style={styles.codeKw}>{'from '}</Text>
-            <Text style={styles.codeStr}>{"'@modal-toast/native'\n"}</Text>
+            <Text style={styles.codeStr}>{"'@omnitoast/native'\n"}</Text>
           </Text>
           <Text style={styles.codeLine}>
             <Text style={styles.code}>{'<ToastProvider defaultPosition='}</Text>

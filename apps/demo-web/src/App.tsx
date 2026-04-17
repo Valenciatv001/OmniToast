@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { toast, modal, useToast } from '@modal-toast/react';
-import type { ToastPosition } from '@modal-toast/react';
+import { toast, modal, useToast } from '@omnitoast/react';
+import type { ToastPosition } from '@omnitoast/react';
 
 const POSITIONS: ToastPosition[] = [
   'top-left', 'top', 'top-right',
@@ -75,7 +75,7 @@ export function App() {
       {/* Hero */}
       <div className="hero">
         <div className="hero__badge">
-          <span>📦</span> @modal-toast
+          <span>📦</span> @omnitoast
         </div>
         <h1 className="hero__title">
           Beautiful <em>toast notifications</em><br />for React & Expo
@@ -149,7 +149,7 @@ export function App() {
       <div style={{ width: '100%', maxWidth: 820 }}>
         <div className="code-block">
           <span className="cm">{'// Works identically in React & Expo React Native\n'}</span>
-          <span className="kw">import</span>{' { toast, modal, useToast } '}<span className="kw">from</span>{' '}<span className="str">'@modal-toast/react'</span>{'\n\n'}
+          <span className="kw">import</span>{' { toast, modal, useToast } '}<span className="kw">from</span>{' '}<span className="str">'@omnitoast/react'</span>{'\n\n'}
           <span className="cm">{'// Imperative — works outside React components too\n'}</span>
           toast.<span className="fn">success</span>(<span className="str">'Payment confirmed!'</span>){'\n'}
           toast.<span className="fn">error</span>(<span className="str">'Something went wrong.'</span>, {'{ title: '}<span className="str">'Error'</span>{', duration: 0 }'}){'\n'}

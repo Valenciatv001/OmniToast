@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ToastProvider } from '@modal-toast/react';
+import { ToastProvider } from '@omnitoast/react';
 import { App } from './App';
 import './index.css';
 

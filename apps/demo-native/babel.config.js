@@ -8,8 +8,8 @@ module.exports = function(api) {
         {
           root: ['./src'],
           alias: {
-            '@modal-toast/core': '../../packages/core/src',
-            '@modal-toast/native': '../../packages/native/src'
+            '@omnitoast/core': '../../packages/core/src',
+            '@omnitoast/native': '../../packages/native/src'
           }
         }
       ]
