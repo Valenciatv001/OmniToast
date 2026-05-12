@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from 'react';
-
 import {
   Animated,
   Modal as RNModal,
@@ -12,20 +11,22 @@ import {
 } from 'react-native';
 import { dismissModal } from '@omnitoast/core';
 import type { ModalState } from '@omnitoast/core';
-import { VariantIcon, VARIANT_COLORS } from './icons';
+import { VariantIcon } from './icons';
+import { useTheme } from './ThemeContext';
 
 interface ModalProps {
   modalState: ModalState;
 }
 
 export function Modal({ modalState: m }: ModalProps) {
+  const { colors, borderRadius, fontFamily } = useTheme();
   const backdropOpacity = useRef(new Animated.Value(0)).current;
   const scale = useRef(new Animated.Value(0.9)).current;
   const opacity = useRef(new Animated.Value(0)).current;
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(true);
 
-  const accentColor = VARIANT_COLORS[m.variant];
+  const accentColor = colors![m.variant as keyof typeof colors];
 
   // ── Enter animation ──────────────────────────────────────
   useEffect(() => {
@@ -84,8 +85,13 @@ export function Modal({ modalState: m }: ModalProps) {
             <Animated.View
               style={[
                 styles.modal,
-                { opacity, transform: [{ scale }] },
-                { borderColor: accentColor + '30' },
+                {
+                  opacity,
+                  transform: [{ scale }],
+                  backgroundColor: colors!.background,
+                  borderColor: accentColor + '30',
+                  borderRadius: borderRadius ?? 20,
+                },
               ]}
               accessibilityViewIsModal
               accessibilityRole="alert"
@@ -93,27 +99,40 @@ export function Modal({ modalState: m }: ModalProps) {
               {/* Header */}
               <View style={styles.header}>
                 <View style={[styles.iconWrap, { backgroundColor: accentColor + '1a' }]}>
-                  <VariantIcon variant={m.variant} size={24} />
+                  <VariantIcon variant={m.variant} size={24} color={accentColor} />
                 </View>
                 {m.title ? (
-                  <Text style={styles.title}>{m.title}</Text>
+                  <Text style={[styles.title, { color: colors!.text, fontFamily }]}>
+                    {m.title}
+                  </Text>
                 ) : null}
               </View>
 
               {/* Body */}
               <View style={styles.body}>
-                <Text style={styles.message}>{m.message}</Text>
+                <Text style={[styles.message, { color: colors!.textMuted, fontFamily }]}>
+                  {m.message}
+                </Text>
               </View>
 
               {/* Footer */}
               <View style={styles.footer}>
                 {m.cancelLabel ? (
                   <TouchableOpacity
-                    style={[styles.btn, styles.btnCancel]}
+                    style={[
+                      styles.btn,
+                      styles.btnCancel,
+                      {
+                        backgroundColor: 'rgba(255,255,255,0.07)',
+                        borderColor: colors!.border,
+                      },
+                    ]}
                     onPress={handleCancel}
                     activeOpacity={0.7}
                   >
-                    <Text style={styles.btnCancelText}>{m.cancelLabel}</Text>
+                    <Text style={[styles.btnCancelText, { color: colors!.textMuted, fontFamily }]}>
+                      {m.cancelLabel}
+                    </Text>
                   </TouchableOpacity>
                 ) : null}
 
@@ -128,10 +147,13 @@ export function Modal({ modalState: m }: ModalProps) {
                   disabled={loading}
                   activeOpacity={0.8}
                 >
-                  <Text style={[
-                    styles.btnConfirmText,
-                    m.variant === 'success' && { color: '#000' },
-                  ]}>
+                  <Text
+                    style={[
+                      styles.btnConfirmText,
+                      { fontFamily },
+                      m.variant === 'success' && { color: '#000' },
+                    ]}
+                  >
                     {loading ? 'Loading…' : m.confirmLabel}
                   </Text>
                 </TouchableOpacity>

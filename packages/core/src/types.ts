@@ -110,3 +110,28 @@ export interface StoreState {
 
 /** Listener callback signature for store subscriptions */
 export type StoreListener = (state: StoreState) => void;
+
+// ─── Theme ───────────────────────────────────────────────────────────────────
+
+export interface OmniToastTheme {
+  colors?: {
+    /** Main background color of toasts and modals */
+    background?: string;
+    /** Text color for titles and main content */
+    text?: string;
+    /** Muted text color for descriptions/messages */
+    textMuted?: string;
+    /** Border color */
+    border?: string;
+    /** Success accent color */
+    success?: string;
+    /** Error accent color */
+    error?: string;
+    /** Info accent color */
+    info?: string;
+  };
+  /** Optional font family override */
+  fontFamily?: string;
+  /** Custom border radius for toasts/modals */
+  borderRadius?: number;
+}

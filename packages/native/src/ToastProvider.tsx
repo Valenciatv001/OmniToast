@@ -1,8 +1,7 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import type { ToastPosition } from '@omnitoast/core';
+import { OmniToastTheme, ToastPosition } from '@omnitoast/core';
 import { ToastContainer } from './ToastContainer';
 import { ModalContainer } from './ModalContainer';
+import { ThemeProvider } from './ThemeContext';
 
 export interface ToastProviderProps {
   children: React.ReactNode;
@@ -16,6 +15,10 @@ export interface ToastProviderProps {
    * @default 4
    */
   maxToasts?: number;
+  /**
+   * Custom theme overrides.
+   */
+  theme?: OmniToastTheme;
   /**
    * Distance from the top edge (in px) for top-anchored toasts.
    * Use this to avoid the status bar / notch area if not using safe-area-context.
@@ -50,20 +53,23 @@ export function ToastProvider({
   children,
   defaultPosition = 'top',
   maxToasts = 4,
+  theme,
   topOffset = 50,
   bottomOffset = 30,
 }: ToastProviderProps) {
   return (
-    <View style={styles.root}>
-      {children}
-      <ToastContainer
-        defaultPosition={defaultPosition}
-        maxToasts={maxToasts}
-        topOffset={topOffset}
-        bottomOffset={bottomOffset}
-      />
-      <ModalContainer />
-    </View>
+    <ThemeProvider theme={theme}>
+      <View style={styles.root}>
+        {children}
+        <ToastContainer
+          defaultPosition={defaultPosition}
+          maxToasts={maxToasts}
+          topOffset={topOffset}
+          bottomOffset={bottomOffset}
+        />
+        <ModalContainer />
+      </View>
+    </ThemeProvider>
   );
 }
 

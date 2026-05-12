@@ -156,6 +156,68 @@ export function handleSystemFailure() {
 }
 ```
 
+### 3. Auto-Loading States (Promises)
+OmniToast has a **built-in Promise-tracking engine**! If you pass an `async` function into `onConfirm`, the modal will automatically lock its buttons and display a loading state until the promise resolves.
+
+```tsx
+const handleDelete = () => {
+  modal.danger({
+    title: 'Delete everything?',
+    message: 'Are you absolutely sure?',
+    confirmLabel: 'Delete',
+    
+    // 👇 Because this is ASYNC, the Modal handles all loading states natively!
+    onConfirm: async () => {
+      try {
+        // ⏳ The modal visually switches to "Loading..." and locks the buttons
+        await backend.deleteUserAccount(); 
+        
+        // Modal cleanly slides away, and we chain a separate Toast!
+        toast.success("Account deleted!");
+      } catch (error) {
+        // 🚨 If the backend fails, the Modal stops loading and stays open for another try!
+        toast.error("Network failed. Try again.");
+      }
+    }
+  });
+};
+```
+
+---
+
+## 🎨 Theming & Customization
+
+OmniToast is designed to be fully brandable. You can customize colors, fonts, and borders across both Web and Native using the `theme` prop on the `ToastProvider`.
+
+```tsx
+const myTheme = {
+  colors: {
+    background: '#1a1a2e',
+    text: '#ffffff',
+    success: '#00d1b2',
+    error: '#ff3860',
+    info: '#209cee',
+    border: 'rgba(255,255,255,0.1)'
+  },
+  borderRadius: 12,
+  fontFamily: 'Inter-Regular' // (Native only: use your loaded font name)
+};
+
+// ... in your root file
+<ToastProvider theme={myTheme}>
+  <App />
+</ToastProvider>
+```
+
+### Web Specifics (CSS Variables)
+On the web, we use CSS custom properties. You can also override them directly in your global CSS:
+```css
+:root {
+  --mt-success: #00d1b2;
+  --mt-toast-radius: 8px;
+}
+```
+
 ---
 
 ## 📖 Component API

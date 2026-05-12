@@ -185,6 +185,41 @@ const handleDelete = () => {
 
 ---
 
+## 🎨 Theming & Customization
+
+OmniToast is designed to be fully brandable. You can customize colors, fonts, and borders across both Web and Native using the `theme` prop on the `ToastProvider`.
+
+```tsx
+const myTheme = {
+  colors: {
+    background: '#1a1a2e',
+    text: '#ffffff',
+    success: '#00d1b2',
+    error: '#ff3860',
+    info: '#209cee',
+    border: 'rgba(255,255,255,0.1)'
+  },
+  borderRadius: 12,
+  fontFamily: 'Inter-Regular' // (Native only: use your loaded font name)
+};
+
+// ... in your root file
+<ToastProvider theme={myTheme}>
+  <App />
+</ToastProvider>
+```
+
+### Web Specifics (CSS Variables)
+On the web, we use CSS custom properties. You can also override them directly in your global CSS:
+```css
+:root {
+  --mt-success: #00d1b2;
+  --mt-toast-radius: 8px;
+}
+```
+
+---
+
 ## 📖 Component API
 
 ### `ToastProvider`

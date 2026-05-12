@@ -67,11 +67,13 @@ export const VARIANT_COLORS: Record<ToastVariant, string> = {
 export function VariantIcon({
   variant,
   size,
+  color: customColor,
 }: {
   variant: ToastVariant;
   size?: number;
+  color?: string;
 }) {
-  const color = VARIANT_COLORS[variant];
+  const color = customColor || VARIANT_COLORS[variant];
   switch (variant) {
     case 'success': return <SuccessIcon color={color} size={size} />;
     case 'error':   return <ErrorIcon color={color} size={size} />;
