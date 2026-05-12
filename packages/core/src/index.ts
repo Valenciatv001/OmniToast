@@ -27,4 +27,5 @@ export type {
   ModalState,
   StoreState,
   StoreListener,
+  OmniToastTheme,
 } from './types';

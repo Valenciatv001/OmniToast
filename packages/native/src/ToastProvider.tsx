@@ -1,3 +1,5 @@
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { OmniToastTheme, ToastPosition } from '@omnitoast/core';
 import { ToastContainer } from './ToastContainer';
 import { ModalContainer } from './ModalContainer';
