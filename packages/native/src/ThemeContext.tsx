@@ -3,16 +3,16 @@ import { OmniToastTheme } from '@omnitoast/core';
 
 export const DEFAULT_THEME: Required<OmniToastTheme> = {
   colors: {
-    background: 'rgba(16, 16, 24, 0.97)',
-    text: '#f0f0f5',
-    textMuted: 'rgba(240, 240, 245, 0.6)',
+    background: 'rgba(15, 16, 22, 0.96)',
+    text: '#f4f4f7',
+    textMuted: 'rgba(244, 244, 247, 0.6)',
     border: 'rgba(255, 255, 255, 0.1)',
-    success: '#22c55e',
-    error: '#ef4444',
-    info: '#3b82f6',
+    success: '#10b981',
+    error: '#f43f5e',
+    info: '#06b6d4',
   },
   fontFamily: undefined as any,
-  borderRadius: 14,
+  borderRadius: 12,
 };
 
 const ThemeContext = createContext<OmniToastTheme>(DEFAULT_THEME);
