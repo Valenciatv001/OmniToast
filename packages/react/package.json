@@ -1,6 +1,9 @@
 {
   "name": "@omnitoast/react",
-  "version": "0.1.6",
+  "version": "0.1.7",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "React (web) adapter for modal-toast — animated toasts and modal dialogs",
   "keywords": ["toast", "modal", "notification", "react", "web"],
   "author": "",

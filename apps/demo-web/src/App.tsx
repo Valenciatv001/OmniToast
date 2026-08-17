@@ -168,7 +168,7 @@ export function App() {
           <div className="navbar__brand">
             <span className="navbar__logo-icon">⚡</span>
             <span className="navbar__logo-text">OmniToast</span>
-            <span className="navbar__version-tag">v0.1.6</span>
+            <span className="navbar__version-tag">v0.1.7</span>
           </div>
 
           <div className="navbar__meta">
