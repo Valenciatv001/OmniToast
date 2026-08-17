@@ -2,6 +2,15 @@
 
 A universal, headless-first modal and toast notification library for **React (Web)** and **Expo / React Native**. 
 
+[![npm core](https://img.shields.io/npm/v/@omnitoast/core?style=flat-square&label=%40omnitoast%2Fcore&color=6366f1)](https://www.npmjs.com/package/@omnitoast/core)
+[![npm react](https://img.shields.io/npm/v/@omnitoast/react?style=flat-square&label=%40omnitoast%2Freact&color=06b6d4)](https://www.npmjs.com/package/@omnitoast/react)
+[![npm native](https://img.shields.io/npm/v/@omnitoast/native?style=flat-square&label=%40omnitoast%2Fnative&color=10b981)](https://www.npmjs.com/package/@omnitoast/native)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-17%2B%20%7C%2018%2B%20%7C%2019%2B-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Expo](https://img.shields.io/badge/Expo-Compatible-000000?style=flat-square&logo=expo&logoColor=white)](https://expo.dev/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://omni-toast-demo-web.vercel.app/)
+
 ### 🌐 [Live Web Demo (Try it!)](https://omni-toast-demo-web.vercel.app/)
 
 Built with an **Adapter Pattern**, Modal Toast allows you to write your notification triggering logic once (even outside of React components, like inside Axios interceptors or Redux actions) and guarantees beautiful, fluid presentation across every platform.
